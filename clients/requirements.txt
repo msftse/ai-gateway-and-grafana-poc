@@ -1,0 +1,7 @@
+# Python dependencies for the AI-gateway demo bootstrap + test client.
+# Install:  python3 -m pip install -r clients/requirements.txt
+
+azure-ai-projects>=2.0.0b1
+azure-identity>=1.19.0
+openai>=1.54.0
+requests>=2.32.0
