@@ -190,8 +190,38 @@ glassbox-session/
 
 ## References
 
+### Core — Azure API Management as AI Gateway
 - [API Management — AI gateway capabilities](https://learn.microsoft.com/azure/api-management/genai-gateway-capabilities)
-- [API Management GenAI policy reference](https://learn.microsoft.com/azure/api-management/api-management-policies#ai-gateway)
+- [GenAI gateway policy reference](https://learn.microsoft.com/azure/api-management/api-management-policies#ai-gateway)
+- [`llm-token-limit` policy](https://learn.microsoft.com/azure/api-management/llm-token-limit-policy) — per-team TPM + daily quota
+- [`llm-semantic-cache-store` / `-lookup` policies](https://learn.microsoft.com/azure/api-management/llm-semantic-cache-store-policy) — vector caching
+- [`llm-content-safety` policy](https://learn.microsoft.com/azure/api-management/llm-content-safety-policy) — prompt moderation
+- [`llm-emit-token-metric` policy](https://learn.microsoft.com/azure/api-management/llm-emit-token-metric-policy) — token metering
+- [Backend pools — load balancing & circuit breaker](https://learn.microsoft.com/azure/api-management/backends#load-balanced-pool)
+- [Import an Azure OpenAI / Foundry API into APIM](https://learn.microsoft.com/azure/api-management/azure-openai-api-from-specification)
+
+### Microsoft Foundry & models
 - [Microsoft Foundry documentation](https://learn.microsoft.com/azure/ai-foundry/)
+- [Foundry Agent Service](https://learn.microsoft.com/azure/ai-foundry/agents/)
+- [Model deployments & quota](https://learn.microsoft.com/azure/ai-foundry/how-to/deploy-models-openai)
+- [`azure-ai-projects` Python SDK](https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme)
+- [Managed-identity (keyless) auth to Azure OpenAI](https://learn.microsoft.com/azure/ai-services/openai/how-to/managed-identity)
+
+### MCP & agent tools
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
+- [Expose an MCP server in API Management](https://learn.microsoft.com/azure/api-management/export-rest-mcp-server)
+- [Microsoft Learn MCP server](https://learn.microsoft.com/training/support/mcp)
+
+### Supporting Azure services
+- [Azure Managed Redis](https://learn.microsoft.com/azure/redis/) — semantic cache store
+- [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/) — moderation backend
+- [Application Insights](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview)
+- [Log Analytics](https://learn.microsoft.com/azure/azure-monitor/logs/log-analytics-overview)
 - [Azure Monitor workbooks](https://learn.microsoft.com/azure/azure-monitor/visualize/workbooks-overview)
+- [Azure Managed Grafana](https://learn.microsoft.com/azure/managed-grafana/) — dashboard layer
+
+### Tooling (IaC & clients)
+- [Terraform `azurerm` provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
+- [Terraform `azapi` provider](https://registry.terraform.io/providers/Azure/azapi/latest/docs)
+- [Azure CLI](https://learn.microsoft.com/cli/azure/)
+- [OpenAI Python library](https://github.com/openai/openai-python)
