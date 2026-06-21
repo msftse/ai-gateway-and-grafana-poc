@@ -8,7 +8,6 @@ It ships with everything needed to run a polished customer session:
 - An **asserting PASS/FAIL test suite** that exercises every gateway capability.
 - A **12-section Azure Monitor workbook** dashboard (tokens, cost, latency, errors, cache, safety, traces).
 - A **presenter runbook** with portal click-paths, commands, and expected output.
-- A **standalone slide deck** (`deck/apim-ai-gateway-foundry.pptx`).
 
 > Internal architecture, decisions, and changelog live in [AGENT.md](AGENT.md).
 
@@ -24,7 +23,6 @@ It ships with everything needed to run a polished customer session:
 | Azure CLI | `az login` before provisioning |
 | Terraform | ≥ 1.x |
 | Python | 3.12 recommended; create a venv and install `clients/requirements.txt` |
-| Node.js | Only needed to rebuild the deck (see [Rebuilding the deck](#rebuilding-the-deck)) |
 
 ### 1. Configure
 
@@ -141,16 +139,6 @@ Follow the runbook in order — each file has a portal click-path, the exact com
 
 ➡️ **[docs/runbook/README.md](docs/runbook/README.md)** — order of play, timings, and 16 step files (`00-prereqs` … `99-cleanup`).
 
-The slide deck for the conceptual portion is at **`deck/apim-ai-gateway-foundry.pptx`** (general/standalone — no lab specifics, reusable as a product presentation).
-
-### Rebuilding the deck
-
-```bash
-cd deck
-npm install
-node build.js          # regenerates apim-ai-gateway-foundry.pptx
-```
-
 ---
 
 ## Project structure
@@ -180,10 +168,6 @@ glassbox-session/
 ├── docs/
 │   ├── runbook/                      # presenter runbook (16 files)
 │   └── assets/                       # screenshot placeholders
-└── deck/
-    ├── build.js                      # pptxgenjs build script
-    ├── package.json  package-lock.json
-    └── apim-ai-gateway-foundry.pptx  # generated deck (26 slides)
 ```
 
 ---
