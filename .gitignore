@@ -38,6 +38,9 @@ node_modules/
 deck/*.pdf
 deck/*.jpg
 
+# Deck (presentation build assets — not part of the deployable project)
+deck/
+
 # OS / editor
 .DS_Store
 *.swp
