@@ -94,6 +94,7 @@ client / agent ──▶ APIM (AI gateway) ──▶ Foundry model deployments
 
 ## Project structure
 
+
 ```
 glassbox-session/
 ├── AGENT.md                          # internal tracker (this file)
@@ -129,27 +130,3 @@ glassbox-session/
     └── apim-ai-gateway-foundry.pptx  # generated deck (26 slides)
 ```
 
----
-
-## Changelog
-
-### 2026-06-14 — Initial documentation
-- Created `AGENT.md` (internal tracker) and `README.md` (presenter docs).
-- Recorded architecture, telemetry model, key decisions, and conventions for the completed Phases 1–5.
-
-### 2026-06-14 — Phase 4: standalone deck
-- Built [deck/build.js](deck/build.js) (pptxgenjs) and generated `deck/apim-ai-gateway-foundry.pptx` — 26 slides covering all 7 demo topics, Midnight Executive palette, standalone/general content (no lab specifics).
-- Added local deck dependencies (`pptxgenjs`, `react`/`react-dom`, `react-icons`, `sharp`) under `deck/`.
-- QA: validated slide XML + visual render; fixed slide 22 icon contrast (azure → white on navy circles).
-
-### 2026-06-14 — Phase 3: tests, runbook, workbook fixes
-- Built asserting test suite in `clients/` (01 chat, 02 token-limit, 03 semantic cache, 04 load balance, 05 content safety, 06 agent) + `run_all.py` orchestrator.
-- Wrote 16-file presenter runbook under `docs/runbook/`.
-- Added [scripts/add-mcp-tool.py](scripts/add-mcp-tool.py) for the live "add a tool" finale (attaches Microsoft Learn MCP to the agent).
-- Fixed semantic cache (embeddings backend URL `/embeddings`); rewrote test 03 to assert deterministically on shared response id.
-- Workbook: fixed run-filter telemetry keys (`Request-x-test-run-id` on requests; `Test Run ID` on custom metrics), rewired cache panels to `customDimensions['Cache']`, fixed tile rendering with `evaluate narrow()`, switched APIM diagnostic to Dedicated table mode + added header logging.
-
-### 2026-06-14 — Phases 1–2: scaffold + live provisioning
-- Authored Terraform root + 6 modules and 3 AI-gateway policy files.
-- Applied live (42 resources); bootstrapped hosted agent `agent-aigw-demo`; captured outputs to `clients/.env`; deployed the workbook.
-- Corrected product-scope `llm-token-limit` attributes and the `bootstrap-agent.py` SDK call (typed `PromptAgentDefinition`, keyword-only `definition`).
